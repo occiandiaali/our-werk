@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref=""></ion-back-button>
+    </ion-buttons>
+    <ion-title size="large">Message Settings</ion-title>
+    <ion-title size="small">@username</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card color="primary">
+    <ion-card-header>
+      <ion-card-title>Choose who to reach</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      When you turn on this setting, nice things begin to happen.
+    </ion-card-content>
+    <ion-item>
+      <ion-label>Receive message requests</ion-label>
+      <ion-toggle slot="end" name="set-on" color="success" checked></ion-toggle>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label>Show new message notification</ion-label>
+      <ion-toggle slot="end" name="show-on" color="success" checked></ion-toggle>
+    </ion-item>
+  </ion-card>
+  
+</ion-content>
