@@ -8,6 +8,7 @@ import { Map, latLng, tileLayer, Layer, marker } from 'leaflet';
 })
 export class Tab1Page {
   map: Map;
+  category: string;
 
   ionViewDidEnter() { this.leafletMap(); }
 
@@ -28,4 +29,8 @@ export class Tab1Page {
   ionViewWillLeave() {
     this.map.remove();
   }
-}
+
+  showSelected() {
+    console.log(`Selected: ${this.category}`);
+  }
+} // class

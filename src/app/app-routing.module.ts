@@ -13,6 +13,14 @@ const routes: Routes = [
   {
     path: 'new-message',
     loadChildren: () => import('./new-message/new-message.module').then( m => m.NewMessagePageModule)
+  },
+  {
+    path: 'category-detail',
+    loadChildren: () => import('./category-detail/category-detail.module').then( m => m.CategoryDetailPageModule)
+  },
+  {
+    path: 'worker-detail',
+    loadChildren: () => import('./worker-detail/worker-detail.module').then( m => m.WorkerDetailPageModule)
   }
   // {
   //   path: 'tab3',
