@@ -1,5 +1,7 @@
 {
   "name": "ourWerk",
-  "integrations": {},
+  "integrations": {
+    "capacitor": {}
+  },
   "type": "angular"
 }
