@@ -1,0 +1,75 @@
+[
+        {
+            "id":1,
+            "imageUrl":"https://cdn.pixabay.com/photo/2015/08/30/04/22/people-913778__340.jpg",
+            "name":"Musbao Olawale",
+            "description":"Nissan specialist, 5 years on SUVs",
+            "rating":8.5,
+            "latitude": 6.5678,
+            "longitude": 3.3681
+          },
+          {
+            "id":2,
+            "imageUrl":"https://cdn.pixabay.com/photo/2017/06/26/02/47/people-2442565__340.jpg",
+            "name":"Ben Benjamin",
+            "description":"Specialist in Benz & German truck",
+            "rating":7.2,
+            "latitude": 6.5648,
+            "longitude": 3.3651
+          },
+          {
+            "id":3,
+            "imageUrl":"https://cdn.pixabay.com/photo/2015/08/02/22/18/man-872004__340.jpg",
+            "name":"Fantastic Femi",
+            "description":"BMW, Volkswagen",
+            "rating":6.5,
+            "latitude": 6.5578,
+            "longitude": 3.3599
+          },
+          {
+            "id":4,
+            "imageUrl":"https://cdn.pixabay.com/photo/2015/06/08/14/56/person-801789__340.jpg",
+            "name":"Uche Uche",
+            "description":"Toyota, spare parts",
+            "rating": 5.4,
+            "latitude": 6.5678,
+            "longitude": 3.3699
+          },
+
+          {
+            "id":5,
+            "imageUrl":"https://cdn.pixabay.com/photo/2015/08/30/04/22/people-913778__340.jpg",
+            "name":"Musbao Olawale",
+            "description":"Nissan specialist, 5 years on SUVs",
+            "rating":8.5,
+            "latitude": 6.5478,
+            "longitude": 3.3632
+          },
+          {
+            "id":6,
+            "imageUrl":"https://cdn.pixabay.com/photo/2017/06/26/02/47/people-2442565__340.jpg",
+            "name":"Ben Benjamin",
+            "description":"Specialist in Benz & German truck",
+            "rating":7.2,
+            "latitude": 6.5658,
+            "longitude": 3.3656
+          },
+          {
+            "id":7,
+            "imageUrl":"https://cdn.pixabay.com/photo/2015/08/02/22/18/man-872004__340.jpg",
+            "name":"Fantastic Femi",
+            "description":"BMW, Volkswagen",
+            "rating":6.5,
+            "latitude": 6.5598,
+            "longitude": 3.3711
+          },
+          {
+            "id":8,
+            "imageUrl":"https://cdn.pixabay.com/photo/2015/06/08/14/56/person-801789__340.jpg",
+            "name":"Uche Uche",
+            "description":"Toyota, spare parts",
+            "rating": 5.4,
+            "latitude": 6.5638,
+            "longitude": 3.3669
+          }
+]
