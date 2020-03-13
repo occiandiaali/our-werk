@@ -8,70 +8,16 @@
 </ion-header>
 
 <ion-content>
-  <ion-list>
+  <ion-list *ngFor="let worker of workers">
     <ion-item routerLink="/worker-detail">
       <ion-thumbnail slot="end">
-        <img src="https://cdn.pixabay.com/photo/2017/06/26/02/47/people-2442565__340.jpg">
+        <ion-img [src]="worker.imageUrl" alt="worker.name"></ion-img>
       </ion-thumbnail>
       <ion-label>
-        <h3>Shakiru Agbede</h3>
-        <ion-icon name="star"></ion-icon>
-        <p>Mercedes Benz specialist</p>
-      </ion-label>
-    </ion-item>
-
-    <ion-item>
-      <ion-thumbnail slot="end">
-        <img src="https://cdn.pixabay.com/photo/2015/03/03/20/42/man-657869__340.jpg">
-      </ion-thumbnail>
-      <ion-label>
-        <h3>Ben Jonson</h3>
-        <ion-icon name="star"></ion-icon>
-        <p>Nissan. Toyota. All Japanese cars.</p>
-      </ion-label>
-    </ion-item>
-
-    <ion-item>
-      <ion-thumbnail slot="end">
-        <img src="../../assets/icon/favicon.png">
-      </ion-thumbnail>
-      <ion-label>
-        <h3>Lorem ipsum</h3>
-        <ion-icon name="star"></ion-icon>
-        <p>consectetur adipiscing elit. Duis ut urna neque.</p>
-      </ion-label>
-    </ion-item>
-
-    <ion-item>
-      <ion-thumbnail slot="end">
-        <img src="../../assets/icon/favicon.png">
-      </ion-thumbnail>
-      <ion-label>
-        <h3>Lorem ipsum</h3>
-        <ion-icon name="star"></ion-icon>
-        <p>consectetur adipiscing elit. Duis ut urna neque.</p>
-      </ion-label>
-    </ion-item>
-
-    <ion-item>
-      <ion-thumbnail slot="end">
-        <img src="../../assets/icon/favicon.png">
-      </ion-thumbnail>
-      <ion-label>
-        <h3>Lorem ipsum</h3>
-        <ion-icon name="star"></ion-icon>
-        <p>consectetur adipiscing elit. Duis ut urna neque.</p>
-      </ion-label>
-    </ion-item>
-
-    <ion-item>
-      <ion-thumbnail slot="end">
-        <img src="../../assets/icon/favicon.png">
-      </ion-thumbnail>
-      <ion-label>
-        <h3>Lorem ipsum</h3>
-        <ion-icon name="star"></ion-icon>
-        <p>consectetur adipiscing elit. Duis ut urna neque.</p>
+        <h2>{{worker.name}}</h2>
+        <h3>{{worker.description}}</h3>
+        <ion-icon name="star"></ion-icon>{{worker.rating}}
+        <p>{{worker.latitude}}, {{worker.longitude}}</p>
       </ion-label>
     </ion-item>
   </ion-list>

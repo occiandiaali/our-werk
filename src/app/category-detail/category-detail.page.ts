@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import * as data from '../../assets/icon/data.json';
 
 @Component({
   selector: 'app-category-detail',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CategoryDetailPage implements OnInit {
 
+  workers: any = (data as any).default;
+
+
+
   constructor() { }
 
   ngOnInit() {
+    console.log(this.workers); 
   }
 
-}
+} // class
