@@ -4,6 +4,8 @@ import { Geolocation } from '@capacitor/core';
 
 import '../../assets/icon/marker-icon-2x.png';
 
+//import workers from '../../assets/workerLocs.json';
+
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
@@ -14,6 +16,8 @@ export class HomePage {
   latitude: any;
   longitude: any;
   category: string;
+  workerList = []; // assignment op instead of colon to avoid "property does not exist on type never error"
+  
   
   ionViewDidEnter() {
     this.getLocation();
@@ -26,35 +30,35 @@ export class HomePage {
     this.longitude = position.coords.longitude;
     console.log(`From getLocation: ${this.latitude} | ${this.longitude}`);
 
-    this.leafletMap();
+    this.leafletMap2();
   }
+
 
   // leafletMap() {
   //   // In setView add latLng and zoom
-  //   this.map = new Map('mapId').setView([6.6980, 3.4157], 12);
+  //   this.map = new Map('mapId').setView([this.latitude, this.longitude], 13);
   //   tileLayer('http://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}', {
   //     attribution: 'edupala.com © ionic LeafLet',
   //   }).addTo(this.map);
 
 
-  //   marker([6.6980, 3.4157]).addTo(this.map)
+  //   marker([this.latitude, this.longitude]).addTo(this.map)
   //     .bindPopup('You are here')
   //     .openPopup();
-  // }
+  //     console.log(`From leafletMap() -> Latitude: ${this.latitude} | Longitude: ${this.longitude}`);
+  // } // leaflet map
 
-  leafletMap() {
-    // In setView add latLng and zoom
-    this.map = new Map('mapId').setView([this.latitude, this.longitude], 13);
-    tileLayer('http://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}', {
-      attribution: 'edupala.com © ionic LeafLet',
-    }).addTo(this.map);
-
+  leafletMap2() {
+    this.map = new Map('mapId').setView([this.latitude, this.longitude], 14);
+    tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+    { attribution: 'Map data © <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>'})
+    .addTo(this.map);
 
     marker([this.latitude, this.longitude]).addTo(this.map)
-      .bindPopup('You are here')
-      .openPopup();
-      console.log(`From leafletMap() -> Latitude: ${this.latitude} | Longitude: ${this.longitude}`);
-  } // leaflet map
+       .bindPopup('You are here')
+       .openPopup();
+       console.log(`From leafletMap(2) -> Latitude: ${this.latitude} | Longitude: ${this.longitude}`);
+  }
 
 
   /** Remove map when we have multiple map object */
@@ -62,8 +66,27 @@ export class HomePage {
     this.map.remove();
   }
 
+
   showSelected() {
     console.log(`Selected: ${this.category}`);
-  }
+    
+    fetch('../../assets/workerLocs.json').then(res => res.json())
+    .then(json => {
+      this.workerList = json.werkers;
+      // console.log(`WorkerList is: ${typeof this.workerList}`);
+      for(const werker of this.workerList) {
+        console.log(werker);
+
+        for (const werk of this.workerList) {
+          marker([werk.latitude, werk.longitude]).addTo(this.map)
+            .bindPopup(werk.name)
+            .openPopup();
+        }
+      }
+      
+    });
+
+    
+  } // method show selected
 
 } // class
