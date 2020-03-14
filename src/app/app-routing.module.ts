@@ -21,6 +21,10 @@ const routes: Routes = [
   {
     path: 'worker-detail',
     loadChildren: () => import('./worker-detail/worker-detail.module').then( m => m.WorkerDetailPageModule)
+  },
+  {
+    path: 'modal',
+    loadChildren: () => import('./modal/modal.module').then( m => m.ModalPageModule)
   }
   // {
   //   path: 'tab3',
