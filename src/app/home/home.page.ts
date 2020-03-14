@@ -2,7 +2,11 @@ import { Component } from '@angular/core';
 import { Map, latLng, tileLayer, Layer, marker } from 'leaflet';
 import { Geolocation } from '@capacitor/core';
 
+import { ModalController } from '@ionic/angular';
+import { ModalPage } from '../modal/modal.page';
+
 import '../../assets/icon/marker-icon-2x.png';
+
 
 //import workers from '../../assets/workerLocs.json';
 
@@ -18,6 +22,7 @@ export class HomePage {
   category: string;
   workerList = []; // assignment op instead of colon to avoid "property does not exist on type never error"
   
+  constructor(public modalController: ModalController) {}
   
   ionViewDidEnter() {
     this.getLocation();
@@ -31,6 +36,16 @@ export class HomePage {
     console.log(`From getLocation: ${this.latitude} | ${this.longitude}`);
 
     this.leafletMap2();
+  } // get location
+
+  async presentModal(name) {
+    const modal = await this.modalController.create({
+      component: ModalPage,
+      componentProps: {
+        'name': name
+      }
+    });
+    return await modal.present();
   }
 
 
@@ -80,9 +95,9 @@ export class HomePage {
         for (const werk of this.workerList) {
           marker([werk.latitude, werk.longitude]).addTo(this.map)
             .bindPopup(werk.name)
-            .openPopup();
-        }
-      }
+            .openPopup().on('click', () => {this.presentModal(werk.name)});  
+        } // inner for loop
+      } // outter for loop
       
     });
 
