@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 
+
+
 @Component({
   selector: 'app-categories',
   templateUrl: 'categories.page.html',
@@ -7,6 +9,13 @@ import { Component } from '@angular/core';
 })
 export class CategoriesPage {
 
+  
+
   constructor() {}
+
+  
+  
+
+  
 
 }
