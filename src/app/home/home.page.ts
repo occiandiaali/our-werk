@@ -8,7 +8,7 @@ import { ModalPage } from '../modal/modal.page';
 import '../../assets/icon/marker-icon-2x.png';
 
 
-//import workers from '../../assets/workerLocs.json';
+// import workers from '../../assets/workerLocs.json';
 
 @Component({
   selector: 'app-home',
@@ -21,9 +21,7 @@ export class HomePage {
   longitude: any;
   category: string;
   workerList = []; // assignment op instead of colon to avoid "property does not exist on type never error"
-  
   constructor(public modalController: ModalController) {}
-  
   ionViewDidEnter() {
     this.getLocation();
   }
@@ -38,11 +36,13 @@ export class HomePage {
     this.leafletMap2();
   } // get location
 
-  async presentModal(name) {
+  async presentModal(name, imageUrl, telephone) {
     const modal = await this.modalController.create({
       component: ModalPage,
       componentProps: {
-        'name': name
+        name,
+        imageUrl,
+        telephone
       }
     });
     return await modal.present();
@@ -66,13 +66,14 @@ export class HomePage {
   leafletMap2() {
     this.map = new Map('mapId').setView([this.latitude, this.longitude], 14);
     tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+    // tslint:disable-next-line:max-line-length
     { attribution: 'Map data © <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>'})
     .addTo(this.map);
 
     marker([this.latitude, this.longitude]).addTo(this.map)
        .bindPopup('You are here')
        .openPopup();
-       console.log(`From leafletMap(2) -> Latitude: ${this.latitude} | Longitude: ${this.longitude}`);
+    console.log(`From leafletMap(2) -> Latitude: ${this.latitude} | Longitude: ${this.longitude}`);
   }
 
 
@@ -84,24 +85,20 @@ export class HomePage {
 
   showSelected() {
     console.log(`Selected: ${this.category}`);
-    
     fetch('../../assets/workerLocs.json').then(res => res.json())
     .then(json => {
       this.workerList = json.werkers;
       // console.log(`WorkerList is: ${typeof this.workerList}`);
-      for(const werker of this.workerList) {
+      for (const werker of this.workerList) {
         console.log(werker);
 
         for (const werk of this.workerList) {
           marker([werk.latitude, werk.longitude]).addTo(this.map)
             .bindPopup(werk.name)
-            .openPopup().on('click', () => {this.presentModal(werk.name)});  
+            .openPopup().on('click', () => {this.presentModal(werk.name, werk.imageUrl, werk.telephone); });
         } // inner for loop
       } // outter for loop
-      
     });
-
-    
   } // method show selected
 
 } // class
