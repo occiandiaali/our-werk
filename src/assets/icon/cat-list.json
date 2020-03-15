@@ -1,0 +1,50 @@
+[
+    {
+      "id": 1,
+      "cat": "Automobile",
+      "info": "Mechanic, Electrical, Body work..",
+      "image": "https://cdn.pixabay.com/photo/2014/06/04/16/36/car-repair-362150__340.jpg"
+    },
+    {
+      "id": 2,
+      "cat": "Laundry",
+      "info": "Mechanic, Electrical, Body work..",
+      "image": "https://cdn.pixabay.com/photo/2017/08/21/08/42/pegs-2664512__340.jpg"
+    },
+    {
+      "id": 3,
+      "cat": "Electrician",
+      "info": "Mechanic, Electrical, Body work..",
+      "image": "https://cdn.pixabay.com/photo/2015/04/18/23/15/electrician-729240__340.jpg"
+    },
+    {
+        "id": 4,
+        "cat": "Plumber",
+      "info": "Mechanic, Electrical, Body work..",
+      "image": "https://cdn.pixabay.com/photo/2013/12/13/21/13/plumber-228010__340.jpg"
+    },
+    {
+        "id": 5,
+        "cat": "Cleaner",
+        "info": "Mechanic, Electrical, Body work..",
+        "image": "https://cdn.pixabay.com/photo/2018/03/02/22/56/cleaning-service-3194504__340.jpg"
+    },
+    {
+        "id": 6,
+        "cat": "Waste disposal",
+        "info": "Mechanic, Electrical, Body work..",
+        "image": "https://cdn.pixabay.com/photo/2014/04/04/14/58/trash-313711__340.jpg"
+    },
+    {
+        "id": 7,
+        "cat": "Carpentry",
+        "info": "Mechanic, Electrical, Body work..",
+        "image": "https://cdn.pixabay.com/photo/2017/06/20/17/17/tools-2423826__340.jpg"
+    },
+    {
+        "id": 8,
+        "cat": "Cook",
+        "info": "Mechanic, Electrical, Body work..",
+        "image": "https://cdn.pixabay.com/photo/2014/04/04/14/58/trash-313711__340.jpg"
+    }
+]
