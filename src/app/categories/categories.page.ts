@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import * as data from '../../assets/icon/cat-list.json';
 
 
 @Component({
@@ -9,13 +9,8 @@ import { Component } from '@angular/core';
 })
 export class CategoriesPage {
 
-  
+  categories: any = (data as any).default;
 
   constructor() {}
-
-  
-  
-
-  
 
 }
