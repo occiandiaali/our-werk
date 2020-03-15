@@ -12,13 +12,13 @@ export class CategoryDetailPage implements OnInit {
 
   workers: any = (data as any).default;
 
-  @Input() category: string = 'Category Title';
+  @Input() category: string;
 
   constructor() {  }
 
 
   ngOnInit() {
-    console.log(this.workers); 
+    console.log(this.workers);
   }
 
 } // class
